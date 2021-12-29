@@ -3,50 +3,112 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Price Tiers</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
-    <link rel="stylesheet" href="PriceTable.css">
+    <title>Adatrögzítő</title>
+    <link rel="stylesheet" href="hf2.css">
+    <script src="hf2.js" type="text/javascript"></script>
 </head>
 
-<body>
-    <div class="panel pricing-table">
-
-        <div class="pricing-plan">
-            <img src="icons/icon1.png" alt="" class="pricing-img">
-            <h2 class="pricing-header">Personal</h2>
-            <ul class="pricing-features">
-                <li class="pricing-features-item">Custom domains</li>
-                <li class="pricing-features-item">Sleeps after 30 mins of inactivity</li>
-            </ul>
-            <span class="pricing-price">Free</span>
-            <a href="#/" class="pricing-button">Sign up</a>
-        </div>
-
-        <div class="pricing-plan">
-            <img src="icons/icon2.png" alt="" class="pricing-img">
-            <h2 class="pricing-header">Small team</h2>
-            <ul class="pricing-features">
-                <li class="pricing-features-item">Never sleeps</li>
-                <li class="pricing-features-item">Multiple workers for more powerful apps</li>
-            </ul>
-            <span class="pricing-price">$150</span>
-            <a href="#/" class="pricing-button is-featured">Free trial</a>
-        </div>
-
-        <div class="pricing-plan">
-            <img src="icons/icon3.png" alt="" class="pricing-img">
-            <h2 class="pricing-header">Enterprise</h2>
-            <ul class="pricing-features">
-                <li class="pricing-features-item">Dedicated</li>
-                <li class="pricing-features-item">Simple horizontal scalability</li>
-            </ul>
-            <span class="pricing-price">$400</span>
-            <a href="#/" class="pricing-button">Free trial</a>
-        </div>
-
+<body onload="countries();counties();city()">
+    <h1>Adatrögzítő</h1>
+    <div class="container1">
+        <fieldset id="fieldset">
+            <div class="container2">
+                <form id="form" onsubmit="return false">
+                    <label for="name">Név:</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    <label for="birthday">Születési idő</label><br>
+                    <input type="date" id="birthday" name="birthday"><br>
+                    <label for="sex">Neme:</label> <br>
+                    <select name="sex" id="sex">
+                        <option value="férfi">Férfi</option>
+                        <option value="fő">Nő</option>
+                    </select><br>
+                    <label for="phonenumber">Telefonszám:</label><br>
+                    <input type="text" id="phonenumber" name="phonenumber" placeholder="Pl: 06303504687"><br>
+                    <label for="email">Email cím:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    <label for="taj">TAJ Szám:</label><br>
+                    <input type="text" id="taj" name="taj" value="115558692"><br>
+                    <label for="ado">Adóazonosító jele:</label><br>
+                    <input type="text" id="ado" name="ado" value="8482101501"><br>
+                    <label for="edu">Legmagasabb iskolai végzettsége:</label><br>
+                    <select name="edu" id="edu">
+                        <option value="">Válassz a listából</option>
+                        <option value="általános iskola">Általános iskola</option>
+                        <option value="szakmunkás képző">Szakmunkás képző</option>
+                        <option value="érettségi">Érettségi</option>
+                        <option value="egyetem">Egyetem</option>
+                    </select><br>
+                    <label for="county">Ország:</label><br>
+                    <select name="country" id="country">
+                        <option value="" selected>Válassz országot</option>
+                    </select><br>
+                    <label for="cím">Megye:</label><br>
+                    <select name="county" id="county">
+                        <option value="" selected>Válassz megyét</option>
+                    </select><br>
+                    <label for="city">Település</label><br>
+                    <select name="city" id="city">
+                        <option value="" selected>Válassz települést</option>
+                    </select><br>
+                    <br>
+                    <input type="submit" value="Rögzítés" id="submit" onclick="formHandler()">
+                </form>
+            </div>
+        </fieldset>
     </div>
 
+    <div id="tablecontainer">
+        <table id="table">
+            <tr>
+                <td>Név</td>
+                <td id="tname"></td>
+            </tr>
+            <tr>
+                <td>Születési Idő</td>
+                <td id="tbirthday"></td>
+            </tr>
+            <tr>
+                <td>Nem</td>
+                <td id="tsex"></td>
+            </tr>
+            <tr>
+                <td>Telefonszám</td>
+                <td id="tphonenumber"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td id="temail"></td>
+            </tr>
+            <tr>
+                <td>Ország</td>
+                <td id="tcountry"></td>
+            </tr>
+            <tr>
+                <td>Megye</td>
+                <td id="tcounty"></td>
+            </tr>
+            <tr>
+                <td>Település</td>
+                <td id="tcity"></td>
+            </tr>
+            <tr>
+                <td>Taj szám</td>
+                <td id=ttaj></td>
+            </tr>
+            <tr>
+                <td>Adó Adóazonosító</td>
+                <td id="tado"></td>
+            </tr>
+            <tr>
+                <td>Legmagasabb iskolai végzettség</td>
+                <td id="tedu"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="error">Hiba üzenet</div>
 </body>
 
 </html>
