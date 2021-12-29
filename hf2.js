@@ -200,5 +200,3 @@ function validateForm() {
         return false;
     }
 }
-let x = document.getElementById("birthday").value;
-console.log(x);
