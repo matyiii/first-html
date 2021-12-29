@@ -91,7 +91,7 @@ function formHandler() {
         return;
     }
     let validForm = validateForm();
-    if (validForm == False) {
+    if (validForm == false) {
         return;
     }
     fillTable(name, birthday, sex, phonenumber, email, country, county, city, taj, ado, edu);
