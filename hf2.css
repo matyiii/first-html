@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+}
+h1{
+    text-align:center;
+    background-color: #fec89a;
+    font-size:2.5em;
+}
+.container1{
+    background-color: #f9dcc4;
+    width: 300px;
+    margin: 0 auto;
+    margin-top:0.25em;
+    border:5px solid black;
+    border-radius: 1.25rem;
+    padding: 10px;
+}
+#tablecontainer {
+    display: none;
+}
+
+#error {
+    display: none;
+    color: red;
+    font-size:3rem;
+    text-align:center;
+}
+
+td {
+    border: 1px solid black;
+    width: 150px;
+    text-align: center;
+}
+
+#fieldset{
+    display: contents;
+}
+
+#table{
+    margin: auto;
+    margin-top: 20px;
+    background-color: #f8edeb;
+    border:5px solid black;
+}
+
+td:nth-of-type(2n-1){
+    font-weight:bold;
+}
